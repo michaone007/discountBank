@@ -1,0 +1,46 @@
+const Ajv = require('ajv');
+var ajv = new Ajv({ schemaId: 'id', allErrors: true });
+var metaSchema = require('ajv/lib/refs/json-schema-draft-04.json');
+ajv.addMetaSchema(metaSchema);
+const customerSchema = require('../schema/customer.json');
+const updateCustomerSchema = require('../schema/updateCustomer.json');
+const looger = require('../loaders/looger');
+
+const createCustomerValidation = async (req, res, next) => {
+  const { body } = req;
+  try {
+    const validate = ajv.compile(customerSchema);
+    const valid = validate(body);
+    if (!valid) {
+      looger.error('invalid request');
+      return res.status(400).json(validate.errors);
+    }
+
+    next();
+  } catch (error) {
+    next(error);
+  }
+};
+
+const updateCustomerValidation = async (req, res, next) => {
+  const looger = require('../loaders/looger');
+
+  const { body } = req;
+  try {
+    const validate = ajv.compile(updateCustomerSchema);
+    const valid = validate(body);
+    if (!valid) {
+      looger.error('invalid request');
+      return res.status(400).json(validate.errors);
+    }
+
+    next();
+  } catch (error) {
+    next(error);
+  }
+};
+
+module.exports = {
+  createCustomerValidation,
+  updateCustomerValidation,
+};

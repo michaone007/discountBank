@@ -1,0 +1,30 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+
+  "type": "object",
+  "properties": {
+    "customerID": {
+      "type": "string"
+    },
+
+    "accountPermissions": {
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "scope": {
+              "type": "string"
+            },
+
+            "accountStatus": {
+              "type": "string"
+            }
+          },
+          "required": ["scope", "accountStatus"]
+        }
+      ]
+    }
+  },
+  "required": ["customerID", "accountPermissions"]
+}

@@ -1,0 +1,501 @@
+{
+	"info": {
+		"_postman_id": "107fa93b-e392-488a-a146-52ee905c9885",
+		"name": "michaDiscount",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "localhost",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MDU2NTgxNTcsImRhdGEiOnsiYmFuayI6ImRpc2NvdW50In0sImlhdCI6MTYwNTY1NDU1N30.K6CNyhalfH49qUdk8-QnVEWh4qXt5K3NEw_vHdZU7TITKcsEGZymMXreVutk8_gsehzfJxx59EoyB0Ru-I14CQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n  {\r\n    \"clientBank\": \"Discount\",\r\n    \"clientID\": \"AI_TestFintech-AI_TestFintech_U1\",\r\n    \"consentID\": \"000000341\",\r\n    \"customerID\": \"Israeli-222210023\",\r\n    \"customerPassport\": \"\",\r\n    \"consentTrack\": \"BankOffered\",\r\n    \"consentStatus\": \"valid\",\r\n    \"activationStatus\": \"Activated\",\r\n    \"customerSite\": \"Retail\",\r\n    \"consentReusability\": \"Recurring\",\r\n    \"acceptedDate\": \"2020-09-30\",\r\n    \"confirmationTimestamp\": \"2020-09-30T11:04:53\",\r\n    \"validFrom\": \"2020-09-30\",\r\n    \"validUntil\": \"2020-12-31\",\r\n    \"modificationTimestamp\": \"2020-09-30T11:04:03\",\r\n    \"cancellationTimestamp\": \"0001-01-01T00:00:00\",\r\n    \"cancellationReason\": \"\",\r\n    \"cancellationInitiator\": \"\",\r\n    \"frequencyPerDay\": 1,\r\n    \"accountPermissions\": [\r\n      {\r\n        \"scope\": \"balances\",\r\n        \"accountNumberIBAN\": \"IL540110920000153498542\",\r\n        \"openingBranch\": \"0092\",\r\n        \"accountNumber\": \"0153498732\",\r\n        \"productCode\": \"CACC\",\r\n        \"currencyCode\": \"\",\r\n        \"accountStatus\": \"Active\",\r\n        \"managingBranch\": \"0092\"\r\n      },\r\n      {\r\n        \"scope\": \"transactions\",\r\n        \"accountNumberIBAN\": \"IL54011092000015542732\",\r\n        \"openingBranch\": \"0092\",\r\n        \"accountNumber\": \"0153498732\",\r\n        \"productCode\": \"CACC\",\r\n        \"currencyCode\": \"\",\r\n        \"accountStatus\": \"Terminated\",\r\n        \"managingBranch\": \"0092\"\r\n      }\r\n    ]\r\n  }\r\n\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/customer",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"customer"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MDU2NTgxNTcsImRhdGEiOnsiYmFuayI6ImRpc2NvdW50In0sImlhdCI6MTYwNTY1NDU1N30.K6CNyhalfH49qUdk8-QnVEWh4qXt5K3NEw_vHdZU7TITKcsEGZymMXreVutk8_gsehzfJxx59EoyB0Ru-I14CQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"customerID\": \"Israeli-222210023\",\r\n    \"accountPermissions\": [\r\n        {\r\n            \"scope\": \"balances\",\r\n            \"accountStatus\": \"Active\"\r\n        },\r\n        {\r\n            \"scope\": \"transactions\",\r\n            \"accountStatus\": \"Terminated\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/customer",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"customer"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getOne",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MDU2NTQ0MzcsImRhdGEiOnsiYmFuayI6ImRpc2NvdW50In0sImlhdCI6MTYwNTY1NDQxN30.e7sMnykw9UldYhgNpLKpG6VwVzKd6n4Qkvdq_5Y98aStCPmmlJ0d2Wnzt7dnmR8rt72KSp6YoPY01Ayu4OfuDQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n  {\r\n    \"clientBank\": \"Discount\",\r\n    \"clientID\": \"AI_TestFintech-AI_TestFintech_U1\",\r\n    \"consentID\": \"000000341\",\r\n    \"customerID\": \"Israeli-222210023\",\r\n    \"customerPassport\": \"\",\r\n    \"consentTrack\": \"BankOffered\",\r\n    \"consentStatus\": \"valid\",\r\n    \"activationStatus\": \"Activated\",\r\n    \"customerSite\": \"Retail\",\r\n    \"consentReusability\": \"Recurring\",\r\n    \"acceptedDate\": \"2020-09-30\",\r\n    \"confirmationTimestamp\": \"2020-09-30T11:04:53\",\r\n    \"validFrom\": \"2020-09-30\",\r\n    \"validUntil\": \"2020-12-31\",\r\n    \"modificationTimestamp\": \"2020-09-30T11:04:03\",\r\n    \"cancellationTimestamp\": \"0001-01-01T00:00:00\",\r\n    \"cancellationReason\": \"\",\r\n    \"cancellationInitiator\": \"\",\r\n    \"frequencyPerDay\": 1,\r\n    \"accountPermissions\": [\r\n      {\r\n        \"scope\": \"balances\",\r\n        \"accountNumberIBAN\": \"IL540110920000153498542\",\r\n        \"openingBranch\": \"0092\",\r\n        \"accountNumber\": \"0153498732\",\r\n        \"productCode\": \"CACC\",\r\n        \"currencyCode\": \"\",\r\n        \"accountStatus\": \"Active\",\r\n        \"managingBranch\": \"0092\"\r\n      },\r\n      {\r\n        \"scope\": \"transactions\",\r\n        \"accountNumberIBAN\": \"IL54011092000015542732\",\r\n        \"openingBranch\": \"0092\",\r\n        \"accountNumber\": \"0153498732\",\r\n        \"productCode\": \"CACC\",\r\n        \"currencyCode\": \"\",\r\n        \"accountStatus\": \"Terminated\",\r\n        \"managingBranch\": \"0092\"\r\n      }\r\n    ]\r\n  }\r\n\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/customer/Israeli-222210023",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"customer",
+								"Israeli-222210023"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MDU2NTQ1MzQsImRhdGEiOnsiYmFuayI6ImRpc2NvdW50In0sImlhdCI6MTYwNTY1NDUxNH0.UEqKHssBRCz6HnQAf6WS8miKjLP-jzR1qH8bkjGy0MWTVtASQHky7DNWIfYACNQWXz6TvnwHAD5OvAedIskEgQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n  {\r\n    \"clientBank\": \"Discount\",\r\n    \"clientID\": \"AI_TestFintech-AI_TestFintech_U1\",\r\n    \"consentID\": \"000000341\",\r\n    \"customerID\": \"Israeli-222210023\",\r\n    \"customerPassport\": \"\",\r\n    \"consentTrack\": \"BankOffered\",\r\n    \"consentStatus\": \"valid\",\r\n    \"activationStatus\": \"Activated\",\r\n    \"customerSite\": \"Retail\",\r\n    \"consentReusability\": \"Recurring\",\r\n    \"acceptedDate\": \"2020-09-30\",\r\n    \"confirmationTimestamp\": \"2020-09-30T11:04:53\",\r\n    \"validFrom\": \"2020-09-30\",\r\n    \"validUntil\": \"2020-12-31\",\r\n    \"modificationTimestamp\": \"2020-09-30T11:04:03\",\r\n    \"cancellationTimestamp\": \"0001-01-01T00:00:00\",\r\n    \"cancellationReason\": \"\",\r\n    \"cancellationInitiator\": \"\",\r\n    \"frequencyPerDay\": 1,\r\n    \"accountPermissions\": [\r\n      {\r\n        \"scope\": \"balances\",\r\n        \"accountNumberIBAN\": \"IL540110920000153498542\",\r\n        \"openingBranch\": \"0092\",\r\n        \"accountNumber\": \"0153498732\",\r\n        \"productCode\": \"CACC\",\r\n        \"currencyCode\": \"\",\r\n        \"accountStatus\": \"Active\",\r\n        \"managingBranch\": \"0092\"\r\n      },\r\n      {\r\n        \"scope\": \"transactions\",\r\n        \"accountNumberIBAN\": \"IL54011092000015542732\",\r\n        \"openingBranch\": \"0092\",\r\n        \"accountNumber\": \"0153498732\",\r\n        \"productCode\": \"CACC\",\r\n        \"currencyCode\": \"\",\r\n        \"accountStatus\": \"Terminated\",\r\n        \"managingBranch\": \"0092\"\r\n      }\r\n    ]\r\n  }\r\n\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/customer/Israeli-222210023",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"customer",
+								"Israeli-222210023"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAll",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MDU2NTgxNTcsImRhdGEiOnsiYmFuayI6ImRpc2NvdW50In0sImlhdCI6MTYwNTY1NDU1N30.K6CNyhalfH49qUdk8-QnVEWh4qXt5K3NEw_vHdZU7TITKcsEGZymMXreVutk8_gsehzfJxx59EoyB0Ru-I14CQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "  {\r\n    \"clientBank\": \"Discount\",\r\n    \"clientID\": \"AI_TestFintech-AI_TestFintech_U1\",\r\n    \"consentID\": \"000000341\",\r\n    \"customerID\": \"Israeli-222210023\",\r\n    \"customerPassport\": \"\",\r\n    \"consentTrack\": \"BankOffered\",\r\n    \"consentStatus\": \"valid\",\r\n    \"activationStatus\": \"Activated\",\r\n    \"customerSite\": \"Retail\",\r\n    \"consentReusability\": \"Recurring\",\r\n    \"acceptedDate\": \"2020-09-30\",\r\n    \"confirmationTimestamp\": \"2020-09-30T11:04:53\",\r\n    \"validFrom\": \"2020-09-30\",\r\n    \"validUntil\": \"2020-12-31\",\r\n    \"modificationTimestamp\": \"2020-09-30T11:04:03\",\r\n    \"cancellationTimestamp\": \"0001-01-01T00:00:00\",\r\n    \"cancellationReason\": \"\",\r\n    \"cancellationInitiator\": \"\",\r\n    \"frequencyPerDay\": 1,\r\n    \"accountPermissions\": [\r\n      {\r\n        \"scope\": \"balances\",\r\n        \"accountNumberIBAN\": \"IL540110920000153498542\",\r\n        \"openingBranch\": \"0092\",\r\n        \"accountNumber\": \"0153498732\",\r\n        \"productCode\": \"CACC\",\r\n        \"currencyCode\": \"\",\r\n        \"accountStatus\": \"Active\",\r\n        \"managingBranch\": \"0092\"\r\n      },\r\n      {\r\n        \"scope\": \"transactions\",\r\n        \"accountNumberIBAN\": \"IL54011092000015542732\",\r\n        \"openingBranch\": \"0092\",\r\n        \"accountNumber\": \"0153498732\",\r\n        \"productCode\": \"CACC\",\r\n        \"currencyCode\": \"\",\r\n        \"accountStatus\": \"Terminated\",\r\n        \"managingBranch\": \"0092\"\r\n      }\r\n    ]\r\n  }\r\n\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/customer",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"customer"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "generateJwt",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/api/admin/generatejwt",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"admin",
+								"generatejwt"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "validateJwt",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MDU2NTQyNTUsImRhdGEiOnsibmFtZSI6Iml0YXlwIn0sImlhdCI6MTYwNTY1NDIzNX0.gfZDlY_iuEh7BtfHLUJwaHEzeKdb9FlYp3HU0Av_lIq5EIcINwBXN8Sl55eYNeSGjoos6lGkdBywn5sYcRR2nw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/api/admin",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"admin"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "cloud",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MDU2NTgxNTcsImRhdGEiOnsiYmFuayI6ImRpc2NvdW50In0sImlhdCI6MTYwNTY1NDU1N30.K6CNyhalfH49qUdk8-QnVEWh4qXt5K3NEw_vHdZU7TITKcsEGZymMXreVutk8_gsehzfJxx59EoyB0Ru-I14CQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n  {\r\n    \"clientBank\": \"Discount\",\r\n    \"clientID\": \"AI_TestFintech-AI_TestFintech_U1\",\r\n    \"consentID\": \"000000341\",\r\n    \"customerID\": \"Israeli-222210023\",\r\n    \"customerPassport\": \"\",\r\n    \"consentTrack\": \"BankOffered\",\r\n    \"consentStatus\": \"valid\",\r\n    \"activationStatus\": \"Activated\",\r\n    \"customerSite\": \"Retail\",\r\n    \"consentReusability\": \"Recurring\",\r\n    \"acceptedDate\": \"2020-09-30\",\r\n    \"confirmationTimestamp\": \"2020-09-30T11:04:53\",\r\n    \"validFrom\": \"2020-09-30\",\r\n    \"validUntil\": \"2020-12-31\",\r\n    \"modificationTimestamp\": \"2020-09-30T11:04:03\",\r\n    \"cancellationTimestamp\": \"0001-01-01T00:00:00\",\r\n    \"cancellationReason\": \"\",\r\n    \"cancellationInitiator\": \"\",\r\n    \"frequencyPerDay\": 1,\r\n    \"accountPermissions\": [\r\n      {\r\n        \"scope\": \"balances\",\r\n        \"accountNumberIBAN\": \"IL540110920000153498542\",\r\n        \"openingBranch\": \"0092\",\r\n        \"accountNumber\": \"0153498732\",\r\n        \"productCode\": \"CACC\",\r\n        \"currencyCode\": \"\",\r\n        \"accountStatus\": \"Active\",\r\n        \"managingBranch\": \"0092\"\r\n      },\r\n      {\r\n        \"scope\": \"transactions\",\r\n        \"accountNumberIBAN\": \"IL54011092000015542732\",\r\n        \"openingBranch\": \"0092\",\r\n        \"accountNumber\": \"0153498732\",\r\n        \"productCode\": \"CACC\",\r\n        \"currencyCode\": \"\",\r\n        \"accountStatus\": \"Terminated\",\r\n        \"managingBranch\": \"0092\"\r\n      }\r\n    ]\r\n  }\r\n\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://bank-discount-api.herokuapp.com/api/customer",
+							"protocol": "https",
+							"host": [
+								"bank-discount-api",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"customer"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MDU2NTgxNTcsImRhdGEiOnsiYmFuayI6ImRpc2NvdW50In0sImlhdCI6MTYwNTY1NDU1N30.K6CNyhalfH49qUdk8-QnVEWh4qXt5K3NEw_vHdZU7TITKcsEGZymMXreVutk8_gsehzfJxx59EoyB0Ru-I14CQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"customerID\": \"Israeli-222210023\",\r\n    \"accountPermissions\": [\r\n        {\r\n            \"scope\": \"balances\",\r\n            \"accountStatus\": \"Active\"\r\n        },\r\n        {\r\n            \"scope\": \"transactions\",\r\n            \"accountStatus\": \"Terminated\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://bank-discount-api.herokuapp.com/api/customer",
+							"protocol": "https",
+							"host": [
+								"bank-discount-api",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"customer"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getOne",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MDU2NTgxNTcsImRhdGEiOnsiYmFuayI6ImRpc2NvdW50In0sImlhdCI6MTYwNTY1NDU1N30.K6CNyhalfH49qUdk8-QnVEWh4qXt5K3NEw_vHdZU7TITKcsEGZymMXreVutk8_gsehzfJxx59EoyB0Ru-I14CQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://bank-discount-api.herokuapp.com/api/customer/Israeli-222210023",
+							"protocol": "https",
+							"host": [
+								"bank-discount-api",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"customer",
+								"Israeli-222210023"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MDU2NTgxNTcsImRhdGEiOnsiYmFuayI6ImRpc2NvdW50In0sImlhdCI6MTYwNTY1NDU1N30.K6CNyhalfH49qUdk8-QnVEWh4qXt5K3NEw_vHdZU7TITKcsEGZymMXreVutk8_gsehzfJxx59EoyB0Ru-I14CQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://bank-discount-api.herokuapp.com/api/customer/Israeli-222210023",
+							"protocol": "https",
+							"host": [
+								"bank-discount-api",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"customer",
+								"Israeli-222210023"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAll",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MDU2NTgxNTcsImRhdGEiOnsiYmFuayI6ImRpc2NvdW50In0sImlhdCI6MTYwNTY1NDU1N30.K6CNyhalfH49qUdk8-QnVEWh4qXt5K3NEw_vHdZU7TITKcsEGZymMXreVutk8_gsehzfJxx59EoyB0Ru-I14CQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://bank-discount-api.herokuapp.com/api/customer",
+							"protocol": "https",
+							"host": [
+								"bank-discount-api",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"customer"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "generateJwt",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://bank-discount-api.herokuapp.com/api/admin/generatejwt",
+							"protocol": "https",
+							"host": [
+								"bank-discount-api",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"admin",
+								"generatejwt"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "validateJwt",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MDU2NTgxNTcsImRhdGEiOnsiYmFuayI6ImRpc2NvdW50In0sImlhdCI6MTYwNTY1NDU1N30.K6CNyhalfH49qUdk8-QnVEWh4qXt5K3NEw_vHdZU7TITKcsEGZymMXreVutk8_gsehzfJxx59EoyB0Ru-I14CQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://bank-discount-api.herokuapp.com/api/admin",
+							"protocol": "https",
+							"host": [
+								"bank-discount-api",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"admin"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
